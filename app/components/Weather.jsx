@@ -8,17 +8,16 @@ var Weather = React.createClass({
     return {isLoading: false}
   },
   handleSearch: function(city) {
-    var that = this;
     this.setState({isLoading: true});
-    OpenWeatherMap.getTemp(city).then(function(temp){
-      that.setState({
+    OpenWeatherMap.getTemp(city).then((temp) => {
+      this.setState({
         'location': city,
         'temp': temp,
         'isLoading': false
       });
-    }, function(errorMessage){
+    }, (errorMessage) => {
       alert(errorMessage);
-      that.setState({'isLoading': false});
+      this.setState({'isLoading': false});
     })
   },
   render: function () {
