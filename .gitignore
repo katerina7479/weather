@@ -1,2 +1,4 @@
 public/bundle.js
 node_modules/
+config.dev.json
+config.prod.json

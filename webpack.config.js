@@ -1,3 +1,5 @@
+production = false
+
 module.exports = {
   entry: './app/app.jsx',
   output: {
@@ -29,5 +31,8 @@ module.exports = {
         exclude: /(node_modules|bower-components|Makefile)/
       }
     ]
+  },
+  externals: {
+    'Config': JSON.stringify(production? require('./config.prod.json') : require('./config.dev.json'))
   }
 };
