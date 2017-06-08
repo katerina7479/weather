@@ -3,12 +3,13 @@ var OpenWeatherMap = require('OpenWeatherMap')
 var WeatherMessage = require('WeatherMessage')
 var WeatherForm = require('WeatherForm')
 
+
 var Weather = React.createClass({
-  getInitialState: function(){
-    return {isLoading: false}
+  getInitialState: function () {
+    return { isLoading: false }
   },
-  handleSearch: function(city) {
-    this.setState({isLoading: true});
+  handleSearch: function (city) {
+    this.setState({ isLoading: true });
     OpenWeatherMap.getTemp(city).then((temp) => {
       this.setState({
         'location': city,
@@ -17,15 +18,16 @@ var Weather = React.createClass({
       });
     }, (errorMessage) => {
       alert(errorMessage);
-      this.setState({'isLoading': false});
+      this.setState({ 'isLoading': false });
     })
   },
   render: function () {
-    var {temp, location, isLoading} = this.state;
-    function renderMessage(){
-      if (isLoading){
+    var { temp, location, isLoading } = this.state;
+
+    function renderMessage() {
+      if (isLoading) {
         return <h3>Fetching Weather...</h3>
-      } else if (temp && location){
+      } else if (temp && location) {
         return <WeatherMessage city={location} temp={temp}/>
       }
     }

@@ -1,6 +1,6 @@
 var names = ['Kat', 'Andrea', 'Klaudia'];
 
-names.forEach(function(name) {
+names.forEach(function (name) {
   console.log('forEach', name);
 });
 
@@ -19,9 +19,9 @@ console.log(returnMe('Katerina'));
 
 var person = {
   name: 'Katerina',
-  greet: function(){
+  greet: function () {
     var that = this;
-    names.forEach(function(name){
+    names.forEach(function (name) {
       console.log(that.name + ' says hi to ' + name)
     });
   }
@@ -31,7 +31,7 @@ person.greet();
 
 var person = {
   name: 'Katerina',
-  greet: function(){
+  greet: function () {
     names.forEach((name) => {
       console.log(this.name + ' says hi to ' + name)
     });
@@ -42,7 +42,7 @@ person.greet();
 
 // Challenge
 
-function add (a, b) {
+function add(a, b) {
   return a + b;
 }
 

@@ -1,15 +1,15 @@
 var React = require('react')
 
 var WeatherForm = React.createClass({
-  onSubmit: function(event) {
+  onSubmit: function (event) {
     event.preventDefault();
     var city = this.refs.city.value;
-    if (city.length > 0){
+    if (city.length > 0) {
       this.refs.city.value = null;
       this.props.onSearch(city);
     }
   },
-  render: function() {
+  render: function () {
     return (
       <form onSubmit={this.onSubmit}>
         <div>
