@@ -5,9 +5,7 @@ var WeatherForm = require('WeatherForm')
 
 var Weather = React.createClass({
   getInitialState: function(){
-    return {
-      isLoading: false
-    }
+    return {isLoading: false}
   },
   handleSearch: function(city) {
     var that = this;
@@ -20,9 +18,7 @@ var Weather = React.createClass({
       });
     }, function(errorMessage){
       alert(errorMessage);
-      that.setState({
-        'isLoading': false
-      })
+      that.setState({'isLoading': false});
     })
   },
   render: function () {
