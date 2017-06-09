@@ -7,7 +7,7 @@ clean:
 	rm -rf node-modules
 
 watch:
-	webpack -w
+	NODE_ENV=dev webpack -w
 
 serve:
 	node server.js

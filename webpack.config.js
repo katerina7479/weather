@@ -1,4 +1,9 @@
-production = false
+var webpack = require('webpack')
+var env_plugin = new webpack.DefinePlugin({
+  'process.env': {
+    'REACT_AP_OW_KEY': JSON.stringify(process.env.REACT_AP_OW_KEY)
+  }
+});
 
 module.exports = {
   entry: './app/app.jsx',
@@ -30,8 +35,8 @@ module.exports = {
       exclude: /(node_modules|bower-components|Makefile)/
     }]
   },
-  externals: {
-    'Config': JSON.stringify(production ? require('./config.prod.json') : require('./config.dev.json'))
-  },
+  plugins: [
+    env_plugin
+  ],
   devtool: 'eval-source-map'
 };

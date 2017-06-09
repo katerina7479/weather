@@ -1,7 +1,7 @@
 var axios = require('axios');
-var Config = require('Config');
 
-const app_id = Config['openweathermap']['api_key']
+
+const app_id = process.env.REACT_AP_OW_KEY;
 const OPEN_WEATHER_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${app_id}`;
 
 module.exports = {
