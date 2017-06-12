@@ -4,7 +4,10 @@ var React = require('react')
 // Stateless functional component
 var About = (props) => {
   return (
-    <h1>About</h1>
+    <div>
+      <h1>About</h1>
+      <p>Welcome to the about page</p>
+    </div>
   );
 }
 
