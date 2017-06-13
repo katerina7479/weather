@@ -1,12 +1,27 @@
 var webpack = require('webpack')
+
+//Plugins
 var env_plugin = new webpack.DefinePlugin({
   'process.env': {
     'REACT_AP_OW_KEY': JSON.stringify(process.env.REACT_AP_OW_KEY)
   }
 });
 
+var provide_plugin = new webpack.ProvidePlugin({
+  '$': 'jquery',
+  'jQuery': 'jquery'
+});
+
+
 module.exports = {
-  entry: './app/app.jsx',
+  entry: [
+    'script!jquery/dist/jquery.min.js',
+    'script!foundation-sites/dist/foundation.min.js',
+    './app/app.jsx'
+  ],
+  externals: {
+    jquery: 'jQuery',
+  },
   output: {
     path: __dirname,
     filename: './public/bundle.js'
@@ -36,7 +51,8 @@ module.exports = {
     }]
   },
   plugins: [
-    env_plugin
+    env_plugin,
+    provide_plugin
   ],
   devtool: 'eval-source-map'
 };
