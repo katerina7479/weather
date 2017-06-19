@@ -1,6 +1,6 @@
 
 
-init:
+init: clean
 	npm install
 
 clean:
@@ -11,3 +11,5 @@ watch:
 
 serve:
 	node server.js
+
+.PHONY: init clean watch serve

@@ -1,7 +1,7 @@
 var webpack = require('webpack')
 
 if (process.env.NODE_ENV == 'dev') {
-  require('dotenv').config()
+  require('dotenv').config();
 }
 
 
@@ -41,7 +41,8 @@ module.exports = {
       WeatherForm: 'app/components/WeatherForm.jsx',
       About: 'app/components/About.jsx',
       Examples: 'app/components/Examples.jsx',
-      OpenWeatherMap: 'app/api/openWeatherMap.jsx'
+      OpenWeatherMap: 'app/api/openWeatherMap.jsx',
+      ErrorModal: 'app/components/ErrorModal.jsx',
     },
     extensions: ['', '.js', '.jsx'],
   },
