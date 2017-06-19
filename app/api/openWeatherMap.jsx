@@ -2,6 +2,7 @@ var axios = require('axios');
 
 
 const app_id = process.env.REACT_AP_OW_KEY;
+console.log(app_id);
 const OPEN_WEATHER_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${app_id}`;
 
 module.exports = {
@@ -18,8 +19,8 @@ module.exports = {
       } else {
         return res.data.main.temp;
       }
-    }, function (res) {
-      throw new Error(res.data.message);
+    }, function (err) {
+      throw new Error(err.response.data.message);
     });
   }
 }
