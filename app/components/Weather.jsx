@@ -1,8 +1,8 @@
-var React = require('react')
-var OpenWeatherMap = require('OpenWeatherMap')
-var WeatherMessage = require('WeatherMessage')
-var WeatherForm = require('WeatherForm')
-var ErrorModal = require('ErrorModal')
+var React = require('react');
+var OpenWeatherMap = require('OpenWeatherMap');
+var WeatherMessage = require('WeatherMessage');
+var WeatherForm = require('WeatherForm');
+var ErrorModal = require('ErrorModal');
 
 
 var Weather = React.createClass({

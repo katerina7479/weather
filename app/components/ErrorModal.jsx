@@ -9,7 +9,7 @@ var ErrorModal = React.createClass({
   },
   getDefaultProps: function () {
     return {
-      title: 'There was an error'
+      title: 'Error'
     }
   },
   componentDidMount: function () {
@@ -21,7 +21,7 @@ var ErrorModal = React.createClass({
     return (
       <div id="error-modal" className="reveal tiny text-center" data-reveal="">
         <h4>{title}</h4>
-        <p>{message}</p>
+        <p style={{textTransform: 'capitalize'}}>{message}</p>
         <button className="button hollow" data-close="">
           Okay
         </button>
